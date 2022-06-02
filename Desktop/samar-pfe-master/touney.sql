@@ -96,6 +96,7 @@ INSERT INTO `regions` (`id_region`, `label`) VALUES
 CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `fullname` varchar(255) NOT NULL,
+  `lastName` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

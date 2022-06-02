@@ -7,8 +7,10 @@ export default class CreateAccountPage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-        username: '',
+        name: '',
+        lastName: '',
         password:'',
+        confirmpassword:'',
         email:'',
         errorMSG:''
     }
@@ -22,7 +24,11 @@ export default class CreateAccountPage extends React.Component {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({"fullname":this.state.username,"password":this.state.password,"email":this.state.email});
+    var raw = JSON.stringify({"fullname":this.state.name,
+                              "password":this.state.password,
+                              "email":this.state.email,
+                              "lastName":this.state.lastName
+                            });
 
     var requestOptions = {
     method: 'POST',
@@ -30,7 +36,14 @@ export default class CreateAccountPage extends React.Component {
     body: raw,
     redirect: 'follow'
     };
+    if (!(this.state.password == this.state.confirmpassword)){
+      this.setState({
+        errorMSG: 'mot de passe n\'est pas identique '
+    })
+      // errorMSG = 
+    }else{
 
+    
     fetch("http://localhost:8080/api/auth/create-account", requestOptions)
     .then(response => response.json())
     .then(result => {
@@ -45,7 +58,7 @@ export default class CreateAccountPage extends React.Component {
     .catch(error => this.setState({
         errorMSG: 'Something went wrong'
     }));
-
+  }
   }
 
   render(){
@@ -89,23 +102,36 @@ export default class CreateAccountPage extends React.Component {
   
 
                       <div class="col-12">
-                        <label for="yourUsername" class="form-label">fullname</label>
+                        <label for="yourUsername" class="form-label">nom</label>
                         <div class="input-group has-validation">
                           <span class="input-group-text" id="inputGroupPrepend">@</span>
-                          <input type="text" name="username" class="form-control" id="yourUsername" onChange={ (e)=>{ this.setState({ username: e.target.value }) } } value={ this.state.username } />
+                          <input type="text" name="username" class="form-control" id="yourUsername" onChange={ (e)=>{ this.setState({ name: e.target.value }) } } value={ this.state.username } />
+                          
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <label for="yourLastename" class="form-label">prénom</label>
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" id="inputGroupPrepend">@</span>
+                          <input type="text" name="yourLastename" class="form-control" id="yourLastename" onChange={ (e)=>{ this.setState({ lastName: e.target.value }) } } value={ this.state.username } />
                           
                         </div>
                       </div>
   
                       <div class="col-12">
-                        <label for="yourPassword" class="form-label">Password</label>
+                        <label for="yourPassword" class="form-label">mot de passe</label>
                         <input type="password" name="password" class="form-control" id="yourPassword" onChange={ (e)=>{ this.setState({ password: e.target.value }) } } value={ this.state.password }  />
                         <div class="invalid-feedback">Please enter your password!</div>
                       </div>
   
+                      <div class="col-12">
+                        <label for="yourConfirmPassword" class="form-label">confirmé mot de passe</label>
+                        <input type="password" name="yourConfirmPassword" class="form-control" id="yourConfirmPassword" onChange={ (e)=>{ this.setState({ confirmpassword: e.target.value }) } } value={ this.state.confirmpassword }  />
+                        <div class="invalid-feedback">Please enter your password again!</div>
+                      </div>
                        
                       <div class="col-12">
-                        <button class="btn btn-primary w-100" type="submit" disabled={ this.state.username ==='' || this.state.password === ''|| this.state.email === '' } >Create account</button>
+                        <button class="btn btn-primary w-100" type="submit" disabled={ this.state.name ==='' || this.state.lastName ==='' || this.state.password === ''|| this.state.confirmpassword === ''|| this.state.email === '' } >Create account</button>
                       </div>
 
                         {
@@ -138,5 +164,6 @@ export default class CreateAccountPage extends React.Component {
  
 
 }
-
+/*
+*/
  
