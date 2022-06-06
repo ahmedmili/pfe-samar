@@ -16,6 +16,8 @@ import ClientsPage from './pages/clients';
 import AddNewClient from './pages/add-client';
 import CreateAccountPage from './pages/create-account';
 import SearchPage from './pages/search-page';
+import PartnersDetailsPage from './pages/searvice-details-page';
+import ProfilePage from './pages/Profile';
  
 export default class App extends React.Component {
 
@@ -35,6 +37,15 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/" component={ HomePage } exact/>
             <Route path={ '/search' } component={ SearchPage } exact />
+            <Route path={ '/partners/:id' } component={ PartnersDetailsPage } exact />
+            
+
+            <Route path={ '/profile' } component={ ProfilePage } exact />
+            
+
+            
+
+
 
             <Route path="/auth" component={ AuthPage } exact/>
 

@@ -1,8 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavBar from "./Navbar";
 
 export default function HedaerBloc(){
-// const location = 
+  // const location = 
   function LogOut(){
     localStorage.removeItem('token')
     // useLocation = 'http://localhost:3000/auth'
@@ -26,14 +26,12 @@ export default function HedaerBloc(){
             <li class="nav-item">
               <Link class="nav-link"  to={ '/' }>Bienvenue</Link>
             </li>
-
-            <li class="nav-item" onClick={LogOut}>
-               <Link class="nav-link"  to={ '/' }>logout</Link>
-            </li>
   
            
   
-   
+            <li class="nav-item" onClick={LogOut}>
+               <Link class="nav-link"  to={ '/' }>logout</Link>
+            </li>
             <li class="nav-item">
               <a class="nav-link " href="contact.html">Devenir partnenaire </a>
             </li>

@@ -149,7 +149,7 @@ export default class PartnersPage extends React.Component {
                                                             
                                                             
                                                             <td>
-                                                                <button className='btn btn-danger btn-sm' onClick={
+                                                                 <button className='btn btn-danger btn-sm' onClick={
                                                                       ()=>{
                                                                         this.deleteClient(c.id);
                                                                     }

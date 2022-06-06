@@ -47,9 +47,9 @@ exports.createUser = function(req,res){
                       if (result.length == 0) {
 
                             // insert 
-                            var sql = "INSERT INTO users (fullname, email, password,lastName) VALUES ?";
+                            var sql = "INSERT INTO users (email,fullname, lastName, password) VALUES ?";
                             var values = [
-                              [requestBody.fullname, requestBody.email, requestBody.password,requestBody.lastName]
+                              [ requestBody.email,requestBody.fullname,requestBody.lastName, requestBody.password]
                             ];
                             con.query(sql, [values], function (err, result) {
                               if (err) throw err;

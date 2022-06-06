@@ -39,8 +39,8 @@ export default class ClientsPage extends React.Component {
              })
         })
         .catch(error => {
-           /*localStorage.clear();
-           this.props.history.push('/auth');*/
+          localStorage.clear();
+           this.props.history.push('/auth');
         });
     }
 

@@ -8,7 +8,7 @@ const urlM = require('url');
 var clients = require('./modules/clients'); 
 
 var cors = require('cors');
-const { getPartnersList, getRegionsList, addNewPartner, deletePartner } = require('./modules/partners');
+const { getPartnersList, getRegionsList, addNewPartner, deletePartner, searchForPartners, searchForPartner, addPartnerToMyCalendar, getMyAgenda, deleteProgramFromCalendar } = require('./modules/partners');
 
 
 
@@ -96,6 +96,40 @@ app.get('/api/regions/list',(req, res) => {
   getRegionsList(req,res);
   
 });
+
+
+
+app.get('/api/partners/list/search',(req, res) => {
+  searchForPartners(req,res);
+  
+});
+
+
+
+app.get('/api/partners/details',(req, res) => {
+  searchForPartner(req,res);
+  
+});
+
+
+
+app.post('/api/calendar/add',(req, res) => {
+  addPartnerToMyCalendar(req,res);
+ 
+});
+
+
+
+app.get('/api/calendar/get-my-agenda',(req, res) => {
+  getMyAgenda(req,res);
+ 
+});
+
+app.get('/api/calendar/delete-program',(req, res) => {
+  deleteProgramFromCalendar(req,res); 
+});
+
+
 
 
 
