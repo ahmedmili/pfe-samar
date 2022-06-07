@@ -9,7 +9,7 @@ export default function HedaerBloc(){
     window.location.reload(false)
     // Window.location.href = 'http://localhost:3000/auth'
     
-  }
+  } 
     return (
       <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
       <div class="container">

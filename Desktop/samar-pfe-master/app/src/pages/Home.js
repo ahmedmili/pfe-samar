@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AsideMenu from '../components/AsideMenu';
+import Slider from '../components/slider/Slider';
 import Footer from '../components/footer';
 import HedaerBloc from '../components/Header';
-
+import './home.css'
 export default class HomePage extends React.Component {
 
 
   constructor(props){
     super(props);
-    this.state = {
-      
-    }
+   
   }
-
+  
+   
+  
   checkUserAuth(){
     if (localStorage.getItem('token') == null) {
       this.props.history.push('/auth');
@@ -28,12 +28,12 @@ export default class HomePage extends React.Component {
       <div >
 
         <HedaerBloc />
+<Slider className='slider'/>
 
 
 
-
-
-        <div class="intro intro-carousel swiper position-relative">
+      
+        {/* <div class="intro intro-carousel swiper position-relative">
 
 <div class="swiper-wrapper">
 
@@ -60,11 +60,9 @@ export default class HomePage extends React.Component {
       </div>
     </div>
   </div>
-
-
 </div>
  
-</div>
+</div> */}
 
         
 
