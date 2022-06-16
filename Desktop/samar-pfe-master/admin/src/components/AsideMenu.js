@@ -18,7 +18,13 @@ export default function AsideMenu(){
       <li className="nav-item">
         <Link className="nav-link collapsed" to={ '/partners' }>
           <i className="bi bi-grid"></i>
-          <span>Partenaires</span>
+          <span>All Partenaires</span>
+        </Link>
+      </li> 
+      <li className="nav-item">
+        <Link className="nav-link collapsed" to={ '/partners_demande' }>
+          <i className="bi bi-grid"></i>
+          <span>partenaire demandes</span>
         </Link>
       </li> 
       

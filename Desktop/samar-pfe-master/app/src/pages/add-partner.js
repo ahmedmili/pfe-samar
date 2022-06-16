@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../components/footer';
 import HedaerBloc from '../components/Header';
+import './add-partner.css'
 
 export default class AddNewPartnerPage extends React.Component {
 
@@ -142,14 +143,10 @@ export default class AddNewPartnerPage extends React.Component {
         { /* End Sidebar*/}
 
         <main id="main" className="main"> 
-            <div class="pagetitle">
-                <h1>Welcome back</h1> 
-            </div> 
-
 
             <div className="card">
                 <div className="card-body">
-                    <h3>Add new partenair</h3>
+                    <h3>Add partenair demande </h3>
 
 
                     <form onSubmit={ (e)=> { e.preventDefault(); this.addData();  } } >
@@ -201,8 +198,10 @@ export default class AddNewPartnerPage extends React.Component {
                            
 
                             <div className="form-group mb-3">
-                               <button type='submit' className='btn btn-success'>Ajouter</button>
+                               <button type='submit' className='btn btn-success' disabled={ this.state.name ==='' || this.state.logo_url ==='' || this.state.email === ''|| this.state.phone === ''|| this.state.website === ''|| this.state.about === '' }>Ajouter</button>
                             </div>
+        
+  
 
 
                             {

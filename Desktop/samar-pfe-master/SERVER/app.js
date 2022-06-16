@@ -8,7 +8,7 @@ const urlM = require('url');
 var clients = require('./modules/clients'); 
 
 var cors = require('cors');
-const { getPartnersList, getRegionsList, addNewPartner, deletePartner, searchForPartners, searchForPartner, addPartnerToMyCalendar, getMyAgenda, deleteProgramFromCalendar } = require('./modules/partners');
+const {getPartnersListDemande, getPartnersList, getRegionsList,AcceptPartner, addNewPartner, deletePartner, searchForPartners, searchForPartner, addPartnerToMyCalendar, getMyAgenda, deleteProgramFromCalendar } = require('./modules/partners');
 
 
 
@@ -60,6 +60,7 @@ app.post('/api/auth/create-account', (req, res) => {
     clients.createUser(req,res);
 });
 
+
 app.post('/api/auth/signin', (req, res) => {
   clients.login(req,res);
 });
@@ -80,6 +81,15 @@ app.get('/api/partners/list',(req, res) => {
   
 });
 
+app.get('/api/partners/list-demande',(req, res) => {
+  getPartnersListDemande(req,res);
+  
+});
+
+app.put('/api/partners-accept', (req, res) => {
+  // console.log(req.headers.authorization)
+  AcceptPartner(req,res);
+});
 
 app.post('/api/partners/add',(req, res) => {
 
