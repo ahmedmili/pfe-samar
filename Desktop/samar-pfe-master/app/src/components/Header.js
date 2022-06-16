@@ -27,17 +27,18 @@ export default function HedaerBloc(){
               <Link class="nav-link"  to={ '/' }>Bienvenue</Link>
             </li>
   
-           
-  
+                
+          
             <li class="nav-item" onClick={LogOut}>
                <Link class="nav-link"  to={ '/' }>logout</Link>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="contact.html">Devenir partnenaire </a>
+              {/* <a class="nav-link " href="contact.html">Devenir partnenaire </a> */}
+              <Link class="nav-link"  to={ '/addPartenaire' }>Devenir partnenaire </Link>
             </li>
 
             <li class="nav-item">
-              <Link to={ '/auth' } class="nav-link " href="contact.html">Profile </Link>
+              <Link to={ '/auth' } class="nav-link ">Profile </Link>
             </li>
 
             

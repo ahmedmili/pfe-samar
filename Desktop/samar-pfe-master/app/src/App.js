@@ -12,12 +12,13 @@ import HomePage from './pages/Home';
 import AuthPage from './pages/Auth';
 
 
-import ClientsPage from './pages/clients';
-import AddNewClient from './pages/add-client';
+// import ClientsPage from './pages/clients';
+// import AddNewClient from './pages/add-client';
 import CreateAccountPage from './pages/create-account';
 import SearchPage from './pages/search-page';
 import PartnersDetailsPage from './pages/searvice-details-page';
 import ProfilePage from './pages/Profile';
+import AddPartnairePage from './pages/add-partner';
  
 export default class App extends React.Component {
 
@@ -37,6 +38,7 @@ export default class App extends React.Component {
           <Switch>
             <Route path="/" component={ HomePage } exact/>
             <Route path={ '/search' } component={ SearchPage } exact />
+            <Route path={ '/addPartenaire' } component={ AddPartnairePage } exact />
             <Route path={ '/partners/:id' } component={ PartnersDetailsPage } exact />
             
 
